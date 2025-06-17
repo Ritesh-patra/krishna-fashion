@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Fashion - Premium Men's Branded Clothing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .brand-logo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+
+
+        .product-image {
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-image::before {
+            opacity: 1;
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(30px);
+        }
+
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .category-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .brand-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#667eea',
+                        'brand-pink': '#764ba2',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#F9FAFB] navbar-blur border-b border-gray-200">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full flex items-center justify-center">
+                        <i class="fas fa-crown text-white text-lg"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold heading-font brand-logo">Krishna Fashion</h1>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-brand-purple transition-colors">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-brand-purple transition-colors">Products</a>
+                    <a href="#brands" class="text-gray-700 hover:text-brand-purple transition-colors">Brands</a>
+                    <a href="#categories" class="text-gray-700 hover:text-brand-purple transition-colors">Categories</a>
+                    <a href="#contact" class="text-gray-700 hover:text-brand-purple transition-colors">Contact</a>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class=" text-white pt-20 pb-16 relative overflow-hidden">
+        <div class="w-full h-[80vh] bg-cover bg-center bg-no-repeat"
+            style="background-image: url('https://i.pinimg.com/736x/4c/2b/dd/4c2bdd5633b780ec1e7ae7769a1ac09c.jpg');"
+            id="responsiveBg">
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Featured Products Slider -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Featured Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    Handpicked selection of premium branded clothing that defines modern masculinity
+                </p>
+            </div>
+
+            <div class="swiper featuredSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Product 1 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 bg-gradient-to-br from-blue-500 to-purple-600 relative">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    New
+                                </div>
+
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-brand-purple font-semibold">TOMMY HILFIGER</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Premium Cotton Shirt</h3>
+                                <p class="text-gray-600 text-sm mb-4">Classic fit formal shirt with modern styling</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-2xl font-bold text-gray-800">₹2,499</span>
+                                        <span class="text-sm text-gray-500 line-through">₹3,999</span>
+                                    </div>
+                                    <button
+                                        class="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-pink transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 bg-gradient-to-br from-green-500 to-teal-600 relative">
+                                <div
+                                    class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Sale
+                                </div>
+
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-brand-purple font-semibold">POLO RALPH LAUREN</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="far fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Classic Polo T-Shirt</h3>
+                                <p class="text-gray-600 text-sm mb-4">Premium cotton polo with signature logo</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-2xl font-bold text-gray-800">₹1,899</span>
+                                        <span class="text-sm text-gray-500 line-through">₹2,999</span>
+                                    </div>
+                                    <button
+                                        class="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-pink transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 bg-gradient-to-br from-red-500 to-pink-600 relative">
+                                <div
+                                    class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Hot
+                                </div>
+
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-brand-purple font-semibold">CALVIN KLEIN</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Designer Blazer</h3>
+                                <p class="text-gray-600 text-sm mb-4">Tailored fit blazer for formal occasions</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-2xl font-bold text-gray-800">₹8,999</span>
+                                        <span class="text-sm text-gray-500 line-through">₹12,999</span>
+                                    </div>
+                                    <button
+                                        class="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-pink transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 bg-gradient-to-br from-purple-500 to-indigo-600 relative">
+                                <div
+                                    class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Trending
+                                </div>
+
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-brand-purple font-semibold">HUGO BOSS</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="far fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Luxury Trousers</h3>
+                                <p class="text-gray-600 text-sm mb-4">Premium wool blend formal trousers</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-2xl font-bold text-gray-800">₹4,999</span>
+                                        <span class="text-sm text-gray-500 line-through">₹7,999</span>
+                                    </div>
+                                    <button
+                                        class="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-pink transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 bg-gradient-to-br from-orange-500 to-red-600 relative">
+                                <div
+                                    class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limited
+                                </div>
+
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-brand-purple font-semibold">ARMANI EXCHANGE</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Designer Jacket</h3>
+                                <p class="text-gray-600 text-sm mb-4">Contemporary style leather jacket</p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-2xl font-bold text-gray-800">₹15,999</span>
+                                        <span class="text-sm text-gray-500 line-through">₹22,999</span>
+                                    </div>
+                                    <button
+                                        class="bg-brand-purple text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-pink transition-colors">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Shop by Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    Explore our diverse range of premium men's clothing categories
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                        style="background-image: url('https://i.pinimg.com/736x/8a/45/4c/8a454cc700526681bffb80af13375aef.jpg');">
+
+                        <!-- Dark overlay -->
+                        <!-- <div class="absolute inset-0 bg-black/40"></div> -->
+
+                        <!-- Text content -->
+                        <div class="absolute bottom-4 left-4 text-white z-10">
+                            <h3 class="text-xl font-semibold">Casual Wear</h3>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Comfortable and stylish everyday clothing</p>
+                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-user-tie text-3xl mb-2"></i>
+                            <h3 class="text-xl font-semibold">Formal Wear</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Professional attire for business occasions</p>
+                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-running text-3xl mb-2"></i>
+                            <h3 class="text-xl font-semibold">Sportswear</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Athletic and fitness clothing collection</p>
+                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <i class="fas fa-gem text-3xl mb-2"></i>
+                            <h3 class="text-xl font-semibold">Accessories</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Premium accessories to complete your look</p>
+                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Premium Brands</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    We partner with the world's most prestigious fashion brands
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="brand-card bg-gray-50 rounded-xl p-6 text-center fade-in">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">TH</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Tommy Hilfiger</h3>
+                </div>
+
+                <div class="brand-card bg-gray-50 rounded-xl p-6 text-center fade-in">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">RL</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Ralph Lauren</h3>
+                </div>
+
+                <div class="brand-card bg-gray-50 rounded-xl p-6 text-center fade-in">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">CK</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Calvin Klein</h3>
+                </div>
+
+                <div class="brand-card bg-gray-50 rounded-xl p-6 text-center fade-in">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">HB</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Hugo Boss</h3>
+                </div>
+
+                <div class="brand-card bg-gray-50 rounded-xl p-6 text-center fade-in">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">LT</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Lacoste</h3>
+                </div>
+
+                <div class="brand-card bg-gray-50 rounded-xl p-6 text-center fade-in">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">AX</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Armani Exchange</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Latest Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    Discover our newest arrivals and trending styles
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product Grid Items -->
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-teal-400 to-teal-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            New
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">NIKE</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Athletic Hoodie</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹3,299</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-yellow-400 to-yellow-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Sale
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">ADIDAS</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Track Pants</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹2,199</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-indigo-400 to-indigo-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Hot
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">PUMA</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Sports Jacket</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹4,599</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-pink-400 to-pink-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Limited
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">UNDER ARMOUR</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Performance Tee</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹1,899</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-emerald-400 to-emerald-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Eco
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">LEVI'S</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Denim Jacket</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹5,999</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-rose-400 to-rose-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Trending
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">ZARA</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Casual Shirt</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹2,799</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-cyan-400 to-cyan-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Premium
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">H&M</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Knit Sweater</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹3,499</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="product-image h-64 bg-gradient-to-br from-violet-400 to-violet-600 relative">
+                        <div
+                            class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Exclusive
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-sm text-brand-purple font-semibold">UNIQLO</span>
+                        <h3 class="font-semibold text-gray-800 mb-2">Chino Pants</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-gray-800">₹2,999</span>
+                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Visit Our Store</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    Experience premium fashion in person at Krishna Fashion
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-brand-purple to-brand-pink rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Address</h4>
+                                    <p class="text-purple-100">123 Fashion Street, Style District, Mumbai 400001</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-purple-100">+91 98765 43210</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-purple-100">info@krishnafashion.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Store Hours</h4>
+                                    <p class="text-purple-100">Mon - Sun: 10:00 AM - 9:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <div class="bg-gray-100 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Store Location</h3>
+                        <div
+                            class="h-64 bg-gradient-to-br from-gray-300 to-gray-400 rounded-xl flex items-center justify-center">
+                            <div class="text-center text-gray-600">
+                                <i class="fas fa-map text-4xl mb-4"></i>
+                                <p class="text-lg font-semibold">Interactive Map</p>
+                                <p class="text-sm">Krishna Fashion Store Location</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex space-x-4">
+                            <button
+                                class="flex-1 bg-brand-purple text-white py-3 rounded-xl font-semibold hover:bg-brand-pink transition-colors">
+                                Get Directions
+                            </button>
+                            <button
+                                class="flex-1 border-2 border-brand-purple text-brand-purple py-3 rounded-xl font-semibold hover:bg-brand-purple hover:text-white transition-colors">
+                                Call Store
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full flex items-center justify-center">
+                            <i class="fas fa-crown text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold heading-font">Krishna Fashion</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Your destination for premium men's branded clothing. Style meets sophistication.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-purple transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-purple transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-purple transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-purple transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sale</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Customer Care</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Size Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new arrivals and exclusive offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email"
+                            class="flex-1 px-4 py-2 bg-gray-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-brand-purple">
+                        <button class="bg-brand-purple px-6 py-2 rounded-r-lg hover:bg-brand-pink transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Krishna Fashion. All rights reserved. | Privacy Policy | Terms of Service
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+
+
+        // Scroll triggered animations
+        gsap.utils.toArray('.fade-in').forEach((element, i) => {
+            gsap.fromTo(element, {
+                opacity: 1,
+                y: 50
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Product cards hover animation
+        gsap.utils.toArray('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    duration: 0.3,
+                    y: -10,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                    ease: "power2.out"
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    duration: 0.3,
+                    y: 0,
+                    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Swiper initialization
+        const featuredSwiper = new Swiper('.featuredSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-blur');
+            } else {
+                navbar.classList.remove('navbar-blur');
+            }
+        });
+
+
+        // Load cart and wishlist from localStorage
+        function loadStoredData() {
+            const storedCart = localStorage.getItem('krishnaFashionCart');
+            const storedWishlist = localStorage.getItem('krishnaFashionWishlist');
+
+            if (storedCart) {
+                cart = JSON.parse(storedCart);
+                updateCartCounter();
+            }
+
+            if (storedWishlist) {
+                wishlist = JSON.parse(storedWishlist);
+                updateWishlistCounter();
+            }
+        }
+
+
+
+
+        document.querySelector('input[type="email"]').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const email = this.value;
+                if (email) {
+                    showNotification('Thank you for subscribing!', 'success');
+                    this.value = '';
+                }
+            }
+        });
+
+        document.querySelector('.fa-paper-plane').parentElement.addEventListener('click', function (e) {
+            e.preventDefault();
+            const emailInput = document.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            if (email) {
+                showNotification('Thank you for subscribing!', 'success');
+                emailInput.value = '';
+            } else {
+                showNotification('Please enter your email address', 'error');
+            }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.fa-bars').parentElement.addEventListener('click', function (e) {
+            e.preventDefault();
+            showNotification('Mobile menu feature coming soon!', 'info');
+        });
+
+        // Social media links
+        document.querySelectorAll('.fab').forEach(icon => {
+            icon.parentElement.addEventListener('click', function (e) {
+                e.preventDefault();
+                const platform = icon.classList[1].replace('fa-', '').replace('-f', '');
+                showNotification(`Opening ${platform}...`, 'info');
+            });
+        });
+
+        // Parallax effect for hero section
+        gsap.to('.floating', {
+            y: -30,
+            duration: 2,
+            ease: "power1.inOut",
+            yoyo: true,
+            repeat: -1
+        });
+
+        // Category cards stagger animation
+        gsap.fromTo('.category-card', {
+            opacity: 0,
+            y: 50,
+            scale: 0.9
+        }, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+                trigger: '#categories',
+                start: "top 70%"
+            }
+        });
+
+        // Brand cards animation
+        gsap.fromTo('.brand-card', {
+            opacity: 0,
+            y: 30
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: '#brands',
+                start: "top 70%"
+            }
+        });
+    </script>
+</body>
+
+</html>
