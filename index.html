@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
@@ -53,8 +54,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-
 
         .product-image {
             border-radius: 12px;
@@ -101,7 +100,7 @@
 
         .navbar-blur {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .category-card {
@@ -122,6 +121,126 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .hamburger {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active .line2 {
+            opacity: 0;
+        }
+
+        .hamburger.active .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #374151;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Video Styles */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Gallery Section Styles */
+        .gallery-image {
+            transition: all 0.4s ease;
+            overflow: hidden;
+            border-radius: 0px;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-image img {
+            transition: all 0.4s ease;
+        }
+
+        .gallery-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-effect::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .gallery-effect:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .gallery-effect:hover .gallery-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
 
         #scroll {
             width: 100%;
@@ -220,10 +339,11 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             #img-box img {
-                width: 25vw;
-                height: 25vw;
+                width: 100px;
+                height: 70px;
+                padding: 10px;
             }
         }
     </style>
@@ -244,17 +364,15 @@
 
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#F9FAFB] navbar-blur border-b border-gray-200">
+    <nav class="fixed top-0 left-0 right-0 z-[99999999] bg-white navbar-blur border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div
-                        class="w-10 h-10 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full flex items-center justify-center">
-                        <i class="fas fa-crown text-white text-lg"></i>
-                    </div>
-                    <h1 class="text-2xl font-bold heading-font brand-logo">Krishna Fashion</h1>
+                <!-- Left logo area -->
+                <div class="flex items-center space-x-3">
+                    <img src="images/logo.jpg" alt="Krishna Fashion Logo" class="h-10 w-auto">
                 </div>
 
+                <!-- Desktop Menu items -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 hover:text-brand-purple transition-colors">Home</a>
                     <a href="#products" class="text-gray-700 hover:text-brand-purple transition-colors">Products</a>
@@ -263,22 +381,58 @@
                     <a href="#contact" class="text-gray-700 hover:text-brand-purple transition-colors">Contact</a>
                 </div>
 
+                <!-- Mobile hamburger menu -->
+                <div class="md:hidden">
+                    <div class="hamburger" id="hamburger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden" id="mobileMenu">
+            <div class="p-6">
+                <div class="flex justify-end mb-8">
+                    <button class="text-gray-600 hover:text-gray-800" id="closeMobileMenu">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <a href="#home"
+                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Home</a>
+                    <a href="#products"
+                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Products</a>
+                    <a href="#brands"
+                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Brands</a>
+                    <a href="#categories"
+                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Categories</a>
+                    <a href="#contact"
+                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class=" text-white pt-20 pb-16 relative overflow-hidden">
-        <div class="w-full h-[80vh] bg-cover bg-center bg-no-repeat"
-            style="background-image: url('https://i.pinimg.com/736x/4c/2b/dd/4c2bdd5633b780ec1e7ae7769a1ac09c.jpg');"
-            id="responsiveBg">
+    <section id="home" class="relative text-white pt-20 pb-16 overflow-hidden">
+        <div class="w-full h-[90vh] relative">
+            <!-- Desktop Background Image -->
+            <div class="hidden md:block w-full h-full bg-cover bg-center bg-no-repeat"
+                style="background-image: url('images/landing.webp');">
+            </div>
+
+            <!-- Mobile Video -->
+            <div class="md:hidden w-full h-full relative">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="video/section.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
         </div>
-
-
     </section>
-
-
 
     <!-- Featured Products Slider -->
     <section id="products" class="py-16 bg-white">
@@ -295,13 +449,17 @@
                     <!-- Product 1 -->
                     <div class="swiper-slide">
                         <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-                            <div class="product-image h-80 bg-gradient-to-br from-blue-500 to-purple-600 relative">
+                            <!-- Product Image Section -->
+                            <div class="product-image h-80 relative">
+                                <img src="images/product1.webp" alt="Premium Cotton Shirt"
+                                    class="object-cover object-top w-full h-full">
                                 <div
                                     class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                     New
                                 </div>
-
                             </div>
+
+                            <!-- Product Info Section -->
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-2">
                                     <span class="text-sm text-brand-purple font-semibold">TOMMY HILFIGER</span>
@@ -315,20 +473,21 @@
                                 </div>
                                 <h3 class="font-semibold text-gray-800 mb-2">Premium Cotton Shirt</h3>
                                 <p class="text-gray-600 text-sm mb-4">Classic fit formal shirt with modern styling</p>
-
                             </div>
                         </div>
                     </div>
 
+
                     <!-- Product 2 -->
                     <div class="swiper-slide">
                         <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-                            <div class="product-image h-80 bg-gradient-to-br from-green-500 to-teal-600 relative">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product2.webp" alt="Premium Cotton Shirt"
+                                    class="object-cover object-top w-full h-full">
                                 <div
-                                    class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                     Sale
                                 </div>
-
                             </div>
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-2">
@@ -343,7 +502,6 @@
                                 </div>
                                 <h3 class="font-semibold text-gray-800 mb-2">Classic Polo T-Shirt</h3>
                                 <p class="text-gray-600 text-sm mb-4">Premium cotton polo with signature logo</p>
-
                             </div>
                         </div>
                     </div>
@@ -351,12 +509,13 @@
                     <!-- Product 3 -->
                     <div class="swiper-slide">
                         <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-                            <div class="product-image h-80 bg-gradient-to-br from-red-500 to-pink-600 relative">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product3.webp" alt="Premium Cotton Shirt"
+                                    class="object-cover object-top w-full h-full">
                                 <div
-                                    class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                    Hot
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Sale
                                 </div>
-
                             </div>
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-2">
@@ -371,7 +530,6 @@
                                 </div>
                                 <h3 class="font-semibold text-gray-800 mb-2">Designer Blazer</h3>
                                 <p class="text-gray-600 text-sm mb-4">Tailored fit blazer for formal occasions</p>
-
                             </div>
                         </div>
                     </div>
@@ -379,12 +537,13 @@
                     <!-- Product 4 -->
                     <div class="swiper-slide">
                         <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-                            <div class="product-image h-80 bg-gradient-to-br from-purple-500 to-indigo-600 relative">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product4.webp" alt="Premium Cotton Shirt"
+                                    class="object-cover object-top w-full h-full">
                                 <div
-                                    class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                    Trending
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Sale
                                 </div>
-
                             </div>
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-2">
@@ -399,7 +558,6 @@
                                 </div>
                                 <h3 class="font-semibold text-gray-800 mb-2">Luxury Trousers</h3>
                                 <p class="text-gray-600 text-sm mb-4">Premium wool blend formal trousers</p>
-
                             </div>
                         </div>
                     </div>
@@ -407,12 +565,13 @@
                     <!-- Product 5 -->
                     <div class="swiper-slide">
                         <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-                            <div class="product-image h-80 bg-gradient-to-br from-orange-500 to-red-600 relative">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product5.webp" alt="Premium Cotton Shirt"
+                                    class="object-cover object-top w-full h-full">
                                 <div
-                                    class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                    Limited
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limit
                                 </div>
-
                             </div>
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-2">
@@ -427,12 +586,66 @@
                                 </div>
                                 <h3 class="font-semibold text-gray-800 mb-2">Designer Jacket</h3>
                                 <p class="text-gray-600 text-sm mb-4">Contemporary style leather jacket</p>
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Gallery Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Wedding Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    Discover timeless elegance with our exquisite wedding attire—crafted to make your special day
+                    unforgettable.
+                </p>
+            </div>
+
+
+            <div class="flex flex-col lg:flex-row gap-6 h-auto lg:h-[816px]">
+                <!-- Left Large Image (50% width) -->
+                <div class="w-full lg:w-1/2">
+                    <div class="gallery-image gallery-effect h-64 lg:h-full">
+                        <img src="https://img.freepik.com/premium-photo/portrait-young-groom-indian-royal-wedding-attire-standing-against-illuminated-ceiling_1048944-7512480.jpg?ga=GA1.1.172258652.1750391369&semt=ais_hybrid&w=740"
+                            alt="Premium Fashion Collection" class="w-full h-full object-cover">
+                        <div class="gallery-text">
+                            <h3 class="text-2xl font-bold mb-2">Premium Collection</h3>
+                            <p class="text-sm opacity-90">Discover luxury fashion</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column with 2 Images (50% width) -->
+                <div class="w-full lg:w-1/2 flex flex-col gap-6 ">
+                    <!-- Top Right Image -->
+                    <div class="h-32 lg:h-1/2 lg:h-[400px]">
+                        <div class="gallery-image gallery-effect h-full">
+                            <img src="https://images.unsplash.com/photo-1612151291351-c5ef474a47d4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Formal Wear" class="w-full h-full object-top object-cover">
+                            <div class="gallery-text">
+                                <h3 class="text-xl font-bold mb-1">Formal Elegance</h3>
+                                <p class="text-xs opacity-90">Professional attire</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right Image -->
+                    <div class="h-32 lg:h-1/2">
+                        <div class="gallery-image gallery-effect h-full lg:h-[400px]">
+                            <img src="https://plus.unsplash.com/premium_photo-1695717374214-810587bb782f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHdlYWRpbmclMjBkcmVzcyUyMGZvciUyMG1lbnxlbnwwfDB8MHx8fDA%3D"
+                                alt="Casual Style" class="w-full h-full object-top object-cover">
+                            <div class="gallery-text">
+                                <h3 class="text-xl font-bold mb-1">Casual Comfort</h3>
+                                <p class="text-xs opacity-90">Everyday essentials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -447,20 +660,14 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
                     <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
                         style="background-image: url('https://plus.unsplash.com/premium_photo-1723754592159-739318374ca7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FzdWFsJTIwd2VhciUyMG1lbiUyMGluZGlhfGVufDB8MHwwfHx8MA%3D%3D');">
-
-                        <!-- Dark overlay -->
-                        <!-- <div class="absolute inset-0 bg-black/40"></div> -->
-
-                        <!-- Text content -->
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Casual Wear</h3>
                         </div>
                     </div>
-
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Comfortable and stylish everyday clothing</p>
                         <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
@@ -472,11 +679,6 @@
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
                     <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
                         style="background-image: url('https://images.unsplash.com/photo-1720833122301-40a663994d61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Rm9ybWFsJTIwV2VhciUyMG1lbiUyMGxhbmRzY2FwZXxlbnwwfDB8MHx8fDA%3D');">
-
-                        <!-- Dark overlay -->
-                        <!-- <div class="absolute inset-0 bg-black/40"></div> -->
-
-                        <!-- Text content -->
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Formal Wear</h3>
                         </div>
@@ -492,11 +694,6 @@
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
                     <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
                         style="background-image: url('https://i.pinimg.com/736x/dd/51/b6/dd51b61538a9ed333eb7cb29cb94fd70.jpg');">
-
-                        <!-- Dark overlay -->
-                        <!-- <div class="absolute inset-0 bg-black/40"></div> -->
-
-                        <!-- Text content -->
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Sportswear</h3>
                         </div>
@@ -512,11 +709,6 @@
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
                     <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
                         style="background-image: url('https://i.pinimg.com/736x/20/b3/ef/20b3efd8483fb20ef6f1ea614111ef2d.jpg');">
-
-                        <!-- Dark overlay -->
-                        <!-- <div class="absolute inset-0 bg-black/40"></div> -->
-
-                        <!-- Text content -->
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Ethnic Vibes</h3>
                         </div>
@@ -528,9 +720,26 @@
                         </button>
                     </div>
                 </div>
+
+              <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                        style="background-image: url('https://i.pinimg.com/736x/e5/02/23/e50223cb7c6b617e7e49a65914dd9f48.jpg');">
+                        <div class="absolute bottom-4 left-4 text-white z-10">
+                            <h3 class="text-xl font-semibold">Wedding Vibes</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Designed for the moments that matter most.</p>
+                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                            Shop Now <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- Brands Section -->
     <section id="brands" class="py-3 px-0 bg-white">
@@ -550,10 +759,12 @@
                     <img src="images/blueberrys.png" alt="">
                     <img src="images/celio_logo.avif" alt="">
                     <img src="images/indian_terrain_logo_white.svg" alt="">
-                    <img src="images/PE_logo_v13.png" alt="">
                     <img src="https://imgs.search.brave.com/tMNatYDa0aUgKV53a8Hin15XYmZeIe915M6IEAAqGhE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvTGV2/aXMtTG9nby1QTkct/SW1hZ2UucG5n"
                         alt="">
                     <img src="images/spyker.avif" alt="">
+                    <img src="images/wrong.png" alt="">
+                    <img src="images/pepe london.png" alt="">
+                    <img src="images/indian.png" alt="">
                 </div>
                 <div id="img-box">
                     <img src="images/arrow+1851+logo.png" alt="">
@@ -561,10 +772,12 @@
                     <img src="images/blueberrys.png" alt="">
                     <img src="images/celio_logo.avif" alt="">
                     <img src="images/indian_terrain_logo_white.svg" alt="">
-                    <img src="images/PE_logo_v13.png" alt="">
                     <img src="https://imgs.search.brave.com/tMNatYDa0aUgKV53a8Hin15XYmZeIe915M6IEAAqGhE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvTGV2/aXMtTG9nby1QTkct/SW1hZ2UucG5n"
-                        alt="">\
+                        alt="">
                     <img src="images/spyker.avif" alt="">
+                    <img src="images/wrong.png" alt="">
+                    <img src="images/pepe london.png" alt="">
+                    <img src="images/indian.png" alt="">
 
                 </div>
             </div>
@@ -583,175 +796,99 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Product Grid Items -->
+                <!-- Card 1 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-teal-400 to-teal-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://us.benetton.com/dw/image/v2/BBSF_PRD/on/demandware.static/-/Sites-ucb-master/default/dw78d90bfb/images/Full_Card_v/01_25P_4AGHUF05A_393_FY.jpg?sw=600&sh=800"
+                            alt="NIKE Hoodie" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             New
                         </div>
                     </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">NIKE</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Athletic Hoodie</h3>
-                        <div class="flex items-center justify-between w-full">
-                            <div class="flex items-center space-x-1 text-yellow-500 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer text-lg"></i>
-                        </div>
-                    </div>
                 </div>
 
+                <!-- Card 2 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-yellow-400 to-yellow-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://us.benetton.com/dw/image/v2/BBSF_PRD/on/demandware.static/-/Sites-ucb-master/default/dw83e2c94c/images/Full_Card_v/01_25P_4DHJUF05K_901_FY.jpg?sw=600&sh=800"
+                            alt="ADIDAS Track Pants" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Sale
                         </div>
                     </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">ADIDAS</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Track Pants</h3>
-                        <div class="flex items-center justify-between">
-
-                            <div class="flex items-center justify-between w-full">
-                                <div class="flex items-center space-x-1 text-yellow-500 text-sm">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer text-lg"></i>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
 
+                <!-- Card 3 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-indigo-400 to-indigo-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://d1pdzcnm6xgxlz.cloudfront.net/bottoms/8905875144601-18.jpg" alt="PUMA Jacket"
+                            class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Hot
                         </div>
                     </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">PUMA</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Sports Jacket</h3>
-                        <div class="flex items-center justify-between w-full">
-                            <div class="flex items-center space-x-1 text-yellow-500 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer text-lg"></i>
-                        </div>
-                    </div>
                 </div>
 
+                <!-- Card 4 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-pink-400 to-pink-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://d1pdzcnm6xgxlz.cloudfront.net/bottoms/8905875083764-18.jpg"
+                            alt="Under Armour Tee" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Limited
                         </div>
                     </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">UNDER ARMOUR</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Performance Tee</h3>
-                        <div class="flex items-center justify-between w-full">
-                            <div class="flex items-center space-x-1 text-yellow-500 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <i class="far fa-heart text-gray-400 hover:text-red-500 cursor-pointer text-lg"></i>
-                        </div>
-
-                    </div>
                 </div>
 
+
+                <!-- Card 5 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-emerald-400 to-emerald-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://cdn02.nnnow.com/web-images/medium/styles/27GW9VCN7QI/1731562887839/1.jpg"
+                            alt="NIKE Hoodie" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Eco
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">LEVI'S</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Denim Jacket</h3>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-gray-800">₹5,999</span>
-                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                            New
                         </div>
                     </div>
                 </div>
 
+                <!-- Card 6 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-rose-400 to-rose-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://cdn08.nnnow.com/web-images/large/styles/DCGJC8GQBJ3/1731415735975/1.jpg"
+                            alt="ADIDAS Track Pants" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Trending
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">ZARA</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Casual Shirt</h3>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-gray-800">₹2,799</span>
-                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                            Sale
                         </div>
                     </div>
                 </div>
 
+                <!-- Card 7 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-cyan-400 to-cyan-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://cdn.shopify.com/s/files/1/0839/1806/1866/files/ITMTR01868-Grey_01_2439e222-3e68-4e3d-a040-7c6deeabd1fd.jpg?v=1749208369&width=700"
+                            alt="PUMA Jacket" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Premium
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">H&M</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Knit Sweater</h3>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-gray-800">₹3,499</span>
-                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                            Hot
                         </div>
                     </div>
                 </div>
 
+                <!-- Card 8 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="product-image h-64 bg-gradient-to-br from-violet-400 to-violet-600 relative">
+                    <div class="product-image h-[70vh] relative">
+                        <img src="https://cdn.shopify.com/s/files/1/0839/1806/1866/files/ITMTR01777-Navy_01_33c5046b-7238-4cec-959b-40a685a1c6d0.jpg?v=1745410228&width=700"
+                            alt="Under Armour Tee" class="w-full h-full object-cover">
                         <div
                             class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Exclusive
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-sm text-brand-purple font-semibold">UNIQLO</span>
-                        <h3 class="font-semibold text-gray-800 mb-2">Chino Pants</h3>
-                        <div class="flex items-center justify-between">
-                            <span class="text-xl font-bold text-gray-800">₹2,999</span>
-                            <button class="bg-brand-purple text-white px-3 py-1 rounded-full text-sm">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                            Limited
                         </div>
                     </div>
                 </div>
@@ -786,7 +923,6 @@
                                     </p>
                                 </div>
                             </div>
-
 
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
@@ -825,7 +961,6 @@
                     <div class="bg-gray-100 rounded-2xl p-8">
                         <h3 class="text-2xl font-bold text-gray-800 mb-6">Store Location</h3>
 
-                        <!-- 🗺️ Embedded Google Map -->
                         <div class="h-64 md:h-40 w-full rounded-xl overflow-hidden">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7530.582316991761!2d84.7847990744503!3d19.31316804448573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3d500e575ff529%3A0x3bbf3c5fd8500255!2sKrishna%20Fashion!5e0!3m2!1sen!2sin!4v1750224946638!5m2!1sen!2sin"
@@ -833,7 +968,6 @@
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
-                        <!-- 🔘 Buttons -->
                         <div class="mt-6 flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
                             <a href="https://maps.app.goo.gl/67ECw5TADQhNSJxu5" target="_blank" class="flex-1">
                                 <button
@@ -850,7 +984,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -858,14 +991,12 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-6">
-                        <div
-                            class="w-10 h-10 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full flex items-center justify-center">
-                            <i class="fas fa-crown text-white"></i>
+                        <div class="flex items-center space-x-3">
+                            <img src="images/logo.jpg" alt="Krishna Fashion Logo" class="h-10 w-auto">
                         </div>
-                        <h3 class="text-2xl font-bold heading-font">Krishna Fashion</h3>
                     </div>
                     <p class="text-gray-400 mb-6">
                         Your destination for premium men's branded clothing. Style meets sophistication.
@@ -903,43 +1034,79 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Subscribe to get updates on new arrivals and exclusive offers.</p>
-                    <div class="flex">
-                        <input type="email" placeholder="Your email"
-                            class="flex-1 px-4 py-2 bg-gray-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-brand-purple">
-                        <button class="bg-brand-purple px-6 py-2 rounded-r-lg hover:bg-brand-pink transition-colors">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
 
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
                 <p class="text-gray-400">
-                    © 2024 Krishna Fashion. All rights reserved. | Privacy Policy | Terms of Service
+                    © 2025 Krishna Fashion. All rights reserved. | Privacy Policy | Terms of Service
                 </p>
             </div>
         </div>
     </footer>
 
-
     <script>
+        // Mobile Menu Functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
         // GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
-
-
 
         // Scroll triggered animations
         gsap.utils.toArray('.fade-in').forEach((element, i) => {
             gsap.fromTo(element, {
-                opacity: 1,
+                opacity: 0,
                 y: 50
             }, {
                 opacity: 1,
                 y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Gallery images animation
+        gsap.utils.toArray('.gallery-image').forEach((element, i) => {
+            gsap.fromTo(element, {
+                opacity: 0,
+                scale: 0.8
+            }, {
+                opacity: 1,
+                scale: 1,
                 duration: 0.8,
                 ease: "power2.out",
                 scrollTrigger: {
@@ -1022,32 +1189,13 @@
             }
         });
 
-
-        // Load cart and wishlist from localStorage
-        function loadStoredData() {
-            const storedCart = localStorage.getItem('krishnaFashionCart');
-            const storedWishlist = localStorage.getItem('krishnaFashionWishlist');
-
-            if (storedCart) {
-                cart = JSON.parse(storedCart);
-                updateCartCounter();
-            }
-
-            if (storedWishlist) {
-                wishlist = JSON.parse(storedWishlist);
-                updateWishlistCounter();
-            }
-        }
-
-
-
-
+        // Newsletter subscription
         document.querySelector('input[type="email"]').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 const email = this.value;
                 if (email) {
-                    showNotification('Thank you for subscribing!', 'success');
+                    alert('Thank you for subscribing!');
                     this.value = '';
                 }
             }
@@ -1058,26 +1206,11 @@
             const emailInput = document.querySelector('input[type="email"]');
             const email = emailInput.value;
             if (email) {
-                showNotification('Thank you for subscribing!', 'success');
+                alert('Thank you for subscribing!');
                 emailInput.value = '';
             } else {
-                showNotification('Please enter your email address', 'error');
+                alert('Please enter your email address');
             }
-        });
-
-        // Mobile menu toggle
-        document.querySelector('.fa-bars').parentElement.addEventListener('click', function (e) {
-            e.preventDefault();
-            showNotification('Mobile menu feature coming soon!', 'info');
-        });
-
-        // Social media links
-        document.querySelectorAll('.fab').forEach(icon => {
-            icon.parentElement.addEventListener('click', function (e) {
-                e.preventDefault();
-                const platform = icon.classList[1].replace('fa-', '').replace('-f', '');
-                showNotification(`Opening ${platform}...`, 'info');
-            });
         });
 
         // Parallax effect for hero section
