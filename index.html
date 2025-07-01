@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Fashion - Premium Men's Branded Clothing</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="src/output.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -348,18 +349,6 @@
         }
     </style>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-purple': '#667eea',
-                        'brand-pink': '#764ba2',
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="bg-gray-50">
@@ -374,11 +363,11 @@
 
                 <!-- Desktop Menu items -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-brand-purple transition-colors">Home</a>
-                    <a href="#products" class="text-gray-700 hover:text-brand-purple transition-colors">Products</a>
-                    <a href="#brands" class="text-gray-700 hover:text-brand-purple transition-colors">Brands</a>
-                    <a href="#categories" class="text-gray-700 hover:text-brand-purple transition-colors">Categories</a>
-                    <a href="#contact" class="text-gray-700 hover:text-brand-purple transition-colors">Contact</a>
+                    <a href="#home" class="text-gray-700 hover:text-[#471396] transition-colors">Home</a>
+                    <a href="#products" class="text-gray-700 hover:text-[#471396] transition-colors">Products</a>
+                    <a href="#brands" class="text-gray-700 hover:text-[#471396] transition-colors">Brands</a>
+                    <a href="#categories" class="text-gray-700 hover:text-[#471396] transition-colors">Categories</a>
+                    <a href="#contact" class="text-gray-700 hover:text-[#471396] transition-colors">Contact</a>
                 </div>
 
                 <!-- Mobile hamburger menu -->
@@ -402,15 +391,15 @@
                 </div>
                 <div class="space-y-6">
                     <a href="#home"
-                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Home</a>
+                        class="block text-gray-700 hover:text-[#471396] transition-colors text-lg mobile-menu-link">Home</a>
                     <a href="#products"
-                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Products</a>
+                        class="block text-gray-700 hover:text-[#471396] transition-colors text-lg mobile-menu-link">Products</a>
                     <a href="#brands"
-                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Brands</a>
+                        class="block text-gray-700 hover:text-[#471396] transition-colors text-lg mobile-menu-link">Brands</a>
                     <a href="#categories"
-                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Categories</a>
+                        class="block text-gray-700 hover:text-[#471396] transition-colors text-lg mobile-menu-link">Categories</a>
                     <a href="#contact"
-                        class="block text-gray-700 hover:text-brand-purple transition-colors text-lg mobile-menu-link">Contact</a>
+                        class="block text-gray-700 hover:text-[#471396] transition-colors text-lg mobile-menu-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -446,319 +435,320 @@
 
             <div class="swiper featuredSwiper">
                 <div class="swiper-wrapper">
-    <!-- Product 1 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <!-- Product Image Section -->
-            <div class="product-image h-80 relative">
-                <img src="images/product1.webp" alt="Stylish Casual Wear"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    New
-                </div>
-            </div>
+                    <!-- Product 1 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <!-- Product Image Section -->
+                            <div class="product-image h-80 relative">
+                                <img src="images/product1.webp" alt="Stylish Casual Wear"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    New
+                                </div>
+                            </div>
 
-            <!-- Product Info Section -->
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Fashion Brand</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
+                            <!-- Product Info Section -->
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Fashion Brand</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Classic Button-Up Shirt</h3>
+                                <p class="text-gray-600 text-sm mb-4">Perfect for both casual and formal occasions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product2.webp" alt="Comfortable Top"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Sale
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Popular Label</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="far fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Essential Polo Top</h3>
+                                <p class="text-gray-600 text-sm mb-4">Versatile piece for everyday wear</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product3.webp" alt="Elegant Outerwear"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Sale
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Designer House</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Sleek Formal T-Shirt</h3>
+                                <p class="text-gray-600 text-sm mb-4">Sharp look for professional settings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product4.webp" alt="Tailored Bottoms"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Sale
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Luxury Apparel</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="far fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Tailored Dress Pants</h3>
+                                <p class="text-gray-600 text-sm mb-4">Comfortable yet sophisticated trousers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product5.webp" alt="Trendy Outerwear"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limit
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Urban Styles</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Modern Outer Jacket</h3>
+                                <p class="text-gray-600 text-sm mb-4">Stylish protection against the elements</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product6.webp" alt="Fashionable Outerwear"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limit
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Street Fashion</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Trendy Outer Layer</h3>
+                                <p class="text-gray-600 text-sm mb-4">Contemporary design for modern looks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product7.webp" alt="Stylish Jacket"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limit
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Modern Wear</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Designer Outerwear</h3>
+                                <p class="text-gray-600 text-sm mb-4">Elevate your wardrobe with this piece</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product8.webp" alt="Chic Apparel"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limit
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Chic Collections</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Fashionable Coat</h3>
+                                <p class="text-gray-600 text-sm mb-4">Perfect for transitional weather</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="swiper-slide">
+                        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
+                            <div class="product-image h-80 relative">
+                                <img src="images/product5.webp" alt="Seasonal Outerwear"
+                                    class="object-cover object-top w-full h-full">
+                                <div
+                                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    Limit
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm text-[#471396] font-semibold">Seasonal Styles</span>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                        <i class="fas fa-star text-xs"></i>
+                                    </div>
+                                </div>
+                                <h3 class="font-semibold text-gray-800 mb-2">Versatile Jacket</h3>
+                                <p class="text-gray-600 text-sm mb-4">Adaptable to various occasions</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Classic Button-Up Shirt</h3>
-                <p class="text-gray-600 text-sm mb-4">Perfect for both casual and formal occasions</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product2.webp" alt="Comfortable Top"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Sale
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Popular Label</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="far fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Essential Polo Top</h3>
-                <p class="text-gray-600 text-sm mb-4">Versatile piece for everyday wear</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product3.webp" alt="Elegant Outerwear"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Sale
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Designer House</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Sleek Formal T-Shirt</h3>
-                <p class="text-gray-600 text-sm mb-4">Sharp look for professional settings</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product4.webp" alt="Tailored Bottoms"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Sale
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Luxury Apparel</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="far fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Tailored Dress Pants</h3>
-                <p class="text-gray-600 text-sm mb-4">Comfortable yet sophisticated trousers</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product5.webp" alt="Trendy Outerwear"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Limit
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Urban Styles</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Modern Outer Jacket</h3>
-                <p class="text-gray-600 text-sm mb-4">Stylish protection against the elements</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 6 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product6.webp" alt="Fashionable Outerwear"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Limit
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Street Fashion</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Trendy Outer Layer</h3>
-                <p class="text-gray-600 text-sm mb-4">Contemporary design for modern looks</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 7 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product7.webp" alt="Stylish Jacket"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Limit
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Modern Wear</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Designer Outerwear</h3>
-                <p class="text-gray-600 text-sm mb-4">Elevate your wardrobe with this piece</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 8 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product8.webp" alt="Chic Apparel"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Limit
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Chic Collections</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Fashionable Coat</h3>
-                <p class="text-gray-600 text-sm mb-4">Perfect for transitional weather</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Product 9 -->
-    <div class="swiper-slide">
-        <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm mx-auto">
-            <div class="product-image h-80 relative">
-                <img src="images/product5.webp" alt="Seasonal Outerwear"
-                    class="object-cover object-top w-full h-full">
-                <div
-                    class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Limit
-                </div>
-            </div>
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-sm text-brand-purple font-semibold">Seasonal Styles</span>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                        <i class="fas fa-star text-xs"></i>
-                    </div>
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-2">Versatile Jacket</h3>
-                <p class="text-gray-600 text-sm mb-4">Adaptable to various occasions</p>
-            </div>
-        </div>
-    </div>
-</div>
                 <div class="swiper-pagination mt-8"></div>
             </div>
         </div>
     </section>
 
     <!-- New Gallery Section -->
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Wedding Collection</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto fade-in">
-                Discover timeless elegance with our exquisite wedding attire—crafted to make your special day unforgettable.
-            </p>
-        </div>
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4 fade-in">Wedding Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto fade-in">
+                    Discover timeless elegance with our exquisite wedding attire—crafted to make your special day
+                    unforgettable.
+                </p>
+            </div>
 
-        <div class="flex flex-col lg:flex-row gap-6 h-auto lg:h-[816px]">
-            <!-- Left Large Image (50% width) -->
-         <div class="w-full lg:w-1/2">
-    <div class="gallery-image gallery-effect h-80 sm:h-[22rem] md:h-96 lg:h-full">
-        <img src="https://img.freepik.com/premium-photo/portrait-young-groom-indian-royal-wedding-attire-standing-against-illuminated-ceiling_1048944-7512480.jpg?ga=GA1.1.172258652.1750391369&semt=ais_hybrid&w=740"
-            alt="Premium Fashion Collection" class="w-full h-full object-top object-cover">
-        <div class="gallery-text">
-            <h3 class="text-2xl font-bold mb-2">Premium Collection</h3>
-            <p class="text-sm opacity-90">Discover luxury fashion</p>
-        </div>
-    </div>
-</div>
-
-
-            <!-- Right Column with 2 Images (50% width) -->
-            <div class="w-full lg:w-1/2 flex flex-col gap-6">
-                <!-- Top Right Image -->
-                <div class="h-64 sm:h-80 md:h-96 lg:h-[400px]">
-                    <div class="gallery-image gallery-effect h-full">
-                        <img src="https://images.unsplash.com/photo-1612151291351-c5ef474a47d4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Formal Wear" class="w-full h-full object-top object-cover">
+            <div class="flex flex-col lg:flex-row gap-6 h-auto lg:h-[816px]">
+                <!-- Left Large Image (50% width) -->
+                <div class="w-full lg:w-1/2">
+                    <div class="gallery-image gallery-effect h-[60vh] sm:h-[22rem] md:h-96 lg:h-full">
+                        <img src="https://img.freepik.com/premium-photo/portrait-young-groom-indian-royal-wedding-attire-standing-against-illuminated-ceiling_1048944-7512480.jpg?ga=GA1.1.172258652.1750391369&semt=ais_hybrid&w=740"
+                            alt="Premium Fashion Collection" class="w-full h-full object-top object-cover">
                         <div class="gallery-text">
-                            <h3 class="text-xl font-bold mb-1">Formal Elegance</h3>
-                            <p class="text-xs opacity-90">Professional attire</p>
+                            <h3 class="text-2xl font-bold mb-2">Premium Collection</h3>
+                            <p class="text-sm opacity-90">Discover luxury fashion</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bottom Right Image -->
-                <div class="h-64 sm:h-80 md:h-96 lg:h-[400px]">
-                    <div class="gallery-image gallery-effect h-full">
-                        <img src="https://plus.unsplash.com/premium_photo-1695717374214-810587bb782f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHdlYWRpbmclMjBkcmVzcyUyMGZvciUyMG1lbnxlbnwwfDB8MHx8fDA%3D"
-                            alt="Casual Style" class="w-full h-full object-top object-cover">
-                        <div class="gallery-text">
-                            <h3 class="text-xl font-bold mb-1">Casual Comfort</h3>
-                            <p class="text-xs opacity-90">Everyday essentials</p>
+
+                <!-- Right Column with 2 Images (50% width) -->
+                <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                    <!-- Top Right Image -->
+                    <div class="h-[50vh] sm:h-80 md:h-96 lg:h-[400px] ">
+                        <div class="gallery-image gallery-effect h-full">
+                            <img src="https://cdn.shopify.com/s/files/1/0569/0284/4581/files/Ethnic_2_Pcs_Suit_In_Rust_Athens-CPNM1548O3ES23FL-image1_500x.jpg?v=1687873596"
+                                alt="Formal Wear" class="w-full h-full object-top object-cover">
+                            <div class="gallery-text">
+                                <h3 class="text-xl font-bold mb-1">Formal Elegance</h3>
+                                <p class="text-xs opacity-90">Professional attire</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right Image -->
+                    <div class="h-[50vh] sm:h-80 md:h-96 lg:h-[400px]">
+                        <div class="gallery-image gallery-effect h-full">
+                            <img src="https://blackberrys.com/cdn/shop/files/2-pcs-suit-in-black-jerret-blackberrys-clothing-2_df0460a0-261d-4e69-9d33-fac771fa5a6b_533x.jpg?v=1710221065"
+                                alt="Casual Style" class="w-full h-full object-top object-cover">
+                            <div class="gallery-text">
+                                <h3 class="text-xl font-bold mb-1">Casual Comfort</h3>
+                                <p class="text-xs opacity-90">Everyday essentials</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Categories Section -->
@@ -773,7 +763,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                    <div class="h-48 relative bg-cover bg-top rounded-xl overflow-hidden"
                         style="background-image: url('https://plus.unsplash.com/premium_photo-1723754592159-739318374ca7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FzdWFsJTIwd2VhciUyMG1lbiUyMGluZGlhfGVufDB8MHwwfHx8MA%3D%3D');">
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Casual Wear</h3>
@@ -781,14 +771,14 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Comfortable and stylish everyday clothing</p>
-                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                        <button class="text-[#471396] font-semibold hover:text-[#B13BFF] transition-colors">
                             Shop Now <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                    <div class="h-52 relative bg-cover bg-top rounded-xl overflow-hidden"
                         style="background-image: url('https://images.unsplash.com/photo-1720833122301-40a663994d61?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Rm9ybWFsJTIwV2VhciUyMG1lbiUyMGxhbmRzY2FwZXxlbnwwfDB8MHx8fDA%3D');">
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Formal Wear</h3>
@@ -796,14 +786,14 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Professional attire for business occasions</p>
-                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                        <button class="text-[#471396] font-semibold hover:text-[#B13BFF] transition-colors">
                             Shop Now <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                    <div class="h-52 relative bg-cover bg-top rounded-xl overflow-hidden"
                         style="background-image: url('https://i.pinimg.com/736x/dd/51/b6/dd51b61538a9ed333eb7cb29cb94fd70.jpg');">
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Sportswear</h3>
@@ -811,14 +801,14 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Athletic and fitness clothing collection</p>
-                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                        <button class="text-[#471396] font-semibold hover:text-[#B13BFF] transition-colors">
                             Shop Now <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                    <div class="h-52 relative bg-cover bg-center rounded-xl overflow-hidden"
                         style="background-image: url('https://i.pinimg.com/736x/20/b3/ef/20b3efd8483fb20ef6f1ea614111ef2d.jpg');">
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Ethnic Vibes</h3>
@@ -826,14 +816,14 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Celebrate tradition with our ethnic collection.</p>
-                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                        <button class="text-[#471396] font-semibold hover:text-[#B13BFF] transition-colors">
                             Shop Now <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
                 </div>
 
-              <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
-                    <div class="h-48 relative bg-cover bg-center rounded-xl overflow-hidden"
+                <div class="category-card bg-white rounded-2xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-52 relative bg-cover bg-center rounded-xl overflow-hidden"
                         style="background-image: url('https://i.pinimg.com/736x/e5/02/23/e50223cb7c6b617e7e49a65914dd9f48.jpg');">
                         <div class="absolute bottom-4 left-4 text-white z-10">
                             <h3 class="text-xl font-semibold">Wedding Vibes</h3>
@@ -841,7 +831,7 @@
                     </div>
                     <div class="p-6">
                         <p class="text-gray-600 mb-4">Designed for the moments that matter most.</p>
-                        <button class="text-brand-purple font-semibold hover:text-brand-pink transition-colors">
+                        <button class="text-[#471396] font-semibold hover:text-[#B13BFF] transition-colors">
                             Shop Now <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
@@ -1019,7 +1009,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="fade-in">
-                    <div class="bg-gradient-to-br from-brand-purple to-brand-pink rounded-2xl p-8 text-white">
+                    <div class="bg-gradient-to-br from-[#471396] to-[#B13BFF] rounded-2xl p-8 text-white">
                         <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
                         <div class="space-y-4">
                             <div class="flex items-start space-x-4">
@@ -1082,13 +1072,13 @@
                         <div class="mt-6 flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
                             <a href="https://maps.app.goo.gl/67ECw5TADQhNSJxu5" target="_blank" class="flex-1">
                                 <button
-                                    class="w-full bg-brand-purple text-white py-3 rounded-xl font-semibold hover:bg-brand-pink transition-colors">
+                                    class="w-full bg-[#471396] text-white py-3 rounded-xl font-semibold hover:bg-[#B13BFF] transition-colors">
                                     Get Directions
                                 </button>
                             </a>
-                            <a href="tel:+919999999999" class="flex-1">
+                            <a href="tel:+919437061873" class="flex-1">
                                 <button
-                                    class="w-full border-2 border-brand-purple text-brand-purple py-3 rounded-xl font-semibold hover:bg-brand-purple hover:text-white transition-colors">
+                                    class="w-full border-2 border-[#471396] text-[#471396] py-3 rounded-xl font-semibold hover:bg-[#471396] hover:text-white transition-colors">
                                     Call Store
                                 </button>
                             </a>
@@ -1114,11 +1104,11 @@
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/krishnafashionberhampur"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-purple transition-colors">
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#471396] transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="https://www.instagram.com/krishnafashion94/"
-                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-purple transition-colors">
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#471396] transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -1290,15 +1280,7 @@
             });
         });
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                navbar.classList.add('navbar-blur');
-            } else {
-                navbar.classList.remove('navbar-blur');
-            }
-        });
+       
 
         // Newsletter subscription
         document.querySelector('input[type="email"]').addEventListener('keypress', function (e) {
