@@ -99,10 +99,6 @@
             transform: translateY(30px);
         }
 
-        .navbar-blur {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-        }
 
         .category-card {
             transition: all 0.3s ease;
@@ -353,7 +349,7 @@
 
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-[99999999] bg-white navbar-blur border-b border-gray-200">
+    <nav class="fixed top-0 left-0 right-0 z-[999999] bg-white navbar-blur border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <!-- Left logo area -->
@@ -382,7 +378,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 md:hidden" id="mobileMenu">
+        <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-[999] shadow-2xl  md:hidden" id="mobileMenu">
             <div class="p-6">
                 <div class="flex justify-end mb-8">
                     <button class="text-gray-600 hover:text-gray-800" id="closeMobileMenu">
